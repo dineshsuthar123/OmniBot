@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.py": {
+      "runtime": "python3.11",
+      "includeFiles": [
+        "app/**",
+        "static/**",
+        "run.py",
+        "requirements.txt"
+      ]
+    },
+    "api/[...path].py": {
+      "runtime": "python3.11",
+      "includeFiles": [
+        "app/**",
+        "static/**",
+        "run.py",
+        "requirements.txt"
+      ]
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/static/(.*)",
+      "destination": "/static/$1"
+    },
+    {
+      "source": "/login",
+      "destination": "/static/login.html"
+    },
+    {
+      "source": "/(.*\\.(js|css|png|jpg|jpeg|svg|ico))",
+      "destination": "/static/$1"
+    },
+    {
+      "source": "/",
+      "destination": "/static/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/static/index.html"
+    }
+  ]
+}
