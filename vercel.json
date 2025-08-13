@@ -2,22 +2,10 @@
   "version": 2,
   "functions": {
     "api/index.py": {
-      "runtime": "python3.11",
-      "includeFiles": [
-        "app/**",
-        "static/**",
-        "run.py",
-        "requirements.txt"
-      ]
+      "runtime": "python3.11"
     },
     "api/[...path].py": {
-      "runtime": "python3.11",
-      "includeFiles": [
-        "app/**",
-        "static/**",
-        "run.py",
-        "requirements.txt"
-      ]
+      "runtime": "python3.11"
     }
   },
   "rewrites": [
