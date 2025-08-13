@@ -2,7 +2,7 @@ fastapi==0.104.1
 uvicorn==0.24.0
 python-dotenv==1.0.0
 httpx==0.25.1
-pydantic==2.7.1
+pydantic==2.9.2
 email-validator==2.1.0.post1
 passlib[bcrypt]==1.7.4
 pyjwt==2.8.0
@@ -16,3 +16,4 @@ groq>=0.3.0
 opencage==2.3.0
 beautifulsoup4==4.12.2
 alpaca-trade-api>=3.0.0
+mangum>=0.17.0

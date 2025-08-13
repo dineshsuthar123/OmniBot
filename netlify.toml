@@ -1,0 +1,26 @@
+[build]
+  base = "."
+  publish = "static"
+  command = "pip install -r requirements.txt"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+  PIP_DISABLE_PIP_VERSION_CHECK = "1"
+  UVICORN_WORKERS = "1"
+
+
+# Route API requests to the Netlify function (Python Lambda)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "/static/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/static/index.html"
+  status = 200
