@@ -9,18 +9,24 @@
   UVICORN_WORKERS = "1"
 
 
-# Route API requests to the Netlify function (Python Lambda)
+## Route API requests to the Netlify function (Python Lambda)
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api"
   status = 200
 
+## Make legacy /static/* asset URLs work (strip /static prefix)
+[[redirects]]
+  from = "/static/*"
+  to = "/:splat"
+  status = 200
+
 [[redirects]]
   from = "/login"
-  to = "/static/login.html"
+  to = "/login.html"
   status = 200
 
 [[redirects]]
   from = "/*"
-  to = "/static/index.html"
+  to = "/index.html"
   status = 200
